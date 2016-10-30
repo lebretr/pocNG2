@@ -1,0 +1,18 @@
+{
+  "name": "scheduler",
+  "description": "a little scheduler for a big experience",
+  "main": "index.js",
+  "author": "remi lebret",
+  "moduleType": [
+    "node"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/components",
+    "test",
+    "tests"
+  ]
+}

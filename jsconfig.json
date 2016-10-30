@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "target": "ES6"
+    },
+    "exclude": [
+        ".build",
+        "node_modules",
+        "public/bower_components",
+        "public/jspm_packages",
+        "typings"
+    ]
+}
