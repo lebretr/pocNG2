@@ -5,7 +5,7 @@ SystemJS.config({
   browserConfig: {
     "baseURL": "/",
     "paths": {
-      "scheduler/": "src/"
+      "scheduler/": "js/"
     }
   },
   nodeConfig: {

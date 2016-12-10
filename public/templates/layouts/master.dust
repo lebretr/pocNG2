@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8" />
         <title>{+title /}</title>
-    
+
         <link rel="stylesheet" href="/css/app.css">
-    
+
     </head>
     <body>
 
@@ -13,8 +13,17 @@
             {+body /}
         </div>
 
-    
-        <script src="/js/app.js"></script>
-    
+		<script src="/jspm_packages/system.js"></script>
+		<!--<script src="/jspm.browser.js"></script>-->
+		<script src="/jspm.config.js"></script>
+		<!--<script>System.import('angular');</script>-->
+        <script src="/app-bundle.js"></script>
+
+		<script>System.import('scheduler');</script>
+
+        {!<script src="/js/app.js"></script>!}
+
+        {+script /}
+
     </body>
 </html>

@@ -1,0 +1,3 @@
+jspm bundle adeo-galaxis ./public/app-bundle.js
+
+jspm bundle adeo-galaxis ./.build/app-bundle.js --minify
