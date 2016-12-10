@@ -42,15 +42,6 @@
 
     "middleware": {
 
-        "static": {
-            "enabled": true,
-            "priority": 40,
-            "module": {
-                "name": "serve-static",
-                "arguments": [ "path:./public" ]
-            }
-        },
-
         "devtools": {
             "enabled": true,
             "priority": 35,

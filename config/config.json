@@ -54,7 +54,7 @@
             "priority": 40,
             "module": {
                 "name": "serve-static",
-                "arguments": [ "path:./.build", "path:./jspm_packages" ]
+                "arguments": [ "path:./.build" ]
             }
         },
 
