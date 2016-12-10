@@ -6,6 +6,7 @@
 
         <link rel="stylesheet" href="/css/app.css">
 
+        <base href="/portal">
     </head>
     <body>
 

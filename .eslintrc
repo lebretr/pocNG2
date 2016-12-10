@@ -1,7 +1,8 @@
 {
     "ecmaFeatures": {
         "blockBindings": true,
-        "forOf": true
+        "forOf": true,
+        "modules": true
     },
     "rules": {
         "indent": [
