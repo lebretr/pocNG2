@@ -1,0 +1,17 @@
+passphrase: webrich
+
+Country Name:FR
+Common Name:localhost
+
+
+#Create a Server Certificate
+openssl genrsa -des3 -out server_1024.key 1024
+openssl req -new -key server_1024.key -out server_1024.csr
+
+#generate your self-signed certificate
+openssl x509 -req -days 365 -in server_1024.csr -signkey server_1024.key -out server_1024.crt
+
+#Creating a PEM file
+cat server_1024.key server_1024.crt > server_1024.pem
+
+openssl pkcs12 -export -inkey server_1024.key  -in server_1024.pem -name localhost -out server_1024.p12

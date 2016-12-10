@@ -1,4 +1,8 @@
 {
+    "ecmaFeatures": {
+        "blockBindings": true,
+        "forOf": true
+    },
     "rules": {
         "indent": [
             2,
@@ -16,12 +20,18 @@
             2,
             "always"
         ],
-        "no-console": 1
+        "no-console": 2
     },
     "env": {
+        "es6": true,
         "node": true,
         "browser": true,
         "mocha": true
+    },
+    "globals": {
+        "angular": true,
+        "$": true,
+        "_": true
     },
     "extends": "eslint:recommended"
 }
