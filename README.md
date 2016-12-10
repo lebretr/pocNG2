@@ -1,4 +1,1 @@
-scheduler
-===========
-
-a little scheduler for a big experience
+Poc Angular 2 in Full ES6/ES2015
