@@ -6,8 +6,12 @@ var express = require('express')
   , kraken = require('kraken-js')
   , bodyParser     = require('body-parser')
   , methodOverride = require('method-override')
+  , logger = require('winston')
   ;
 
+var externalConfigLib=require('./lib/externalConfigLib')
+  , loggerLib=require('./lib/loggerLib')
+  ;
 
 var options, app;
 
@@ -44,12 +48,20 @@ options = {
          * Add any additional config setup or overrides here. `config` is an initialized
          * `confit` (https://github.com/krakenjs/confit/) configuration object.
          */
-        next(null, config);
+
+        externalConfigLib.configureAsync(config)
+        .then(function(){
+            return loggerLib.configureAsync(config.get('loggerConfig'));
+        }).then(function(){
+            return next(null, config);
+        }).catch(function(err){
+            if (err) { return next(err) ; }
+        });
     }
 };
 
 app.use(kraken(options));
 app.on('start', function () {
-    console.log('Application ready to serve requests.');
-    console.log('Environment: %s', app.kraken.get('env:env'));
+    logger.log('Application ready to serve requests.');
+    logger.log('Environment: %s', app.kraken.get('env:env'));
 });

@@ -10,7 +10,9 @@
     "all": "npm run build && npm run test"
   },
   "dependencies": {
+    "bluebird": "^3.4.6",
     "body-parser": "^1.15.2",
+    "cjson": "^0.4.0",
     "construx": "^1.0.0",
     "construx-copier": "^1.0.0",
     "construx-dustjs": "^1.1.0",
@@ -22,7 +24,8 @@
     "kraken-js": "^2.0.0",
     "makara": "^2.0.3",
     "method-override": "^2.3.6",
-    "ssl-root-cas": "^1.2.3"
+    "ssl-root-cas": "^1.2.3",
+    "winston": "^2.2.0"
   },
   "devDependencies": {
     "grunt": "^0.4.5",

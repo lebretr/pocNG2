@@ -1,14 +1,21 @@
 {
+    /**
+    * externalConf permet de définir un fichier de conf externe qui surchargera les conf défini
+    * dans config.json et {env}.json
+    * si on défini un répertoire, alors on recherchera le fichier {appName}.json dans le répetoire paramétré
+    * si on ne défini pas de répertoire, alors on recherchera le fichier {appName}.json dans le répetoire "/home2/appmanager/refenv/conf"
+    */
+    // "externalConf" : "/home2/appmanager/refenv/conf",
 
-    
+
     "express": {
         "view cache": false,
         "view engine": "js",
         "views": "path:./.build/templates"
     },
-    
 
-    
+
+
     "view engines": {
         "js": {
             "module": "makara",
@@ -23,26 +30,45 @@
 
     "dust": {
         "helpers": [
-    
+
             "dust-makara-helpers"
-    
+
         ]
     },
-    
 
-    
+
+
     "i18n": {
         "contentPath": "path:./locales",
         "fallback": "en-US"
     },
-    
+
 
     "specialization": {
     },
 
     "middleware": {
 
-        
+        "static": {
+            "enabled": true,
+            "priority": 40,
+            "module": {
+                "name": "serve-static",
+                "arguments": [ "path:./.build", "path:./jspm_packages" ]
+            }
+        },
+
+        "languageLib": {
+            "priority": 95,
+            "enabled": true,
+            "module": {
+                "name": "path:./lib/middleLanguageLib",
+                "method": "languageLib",
+                "arguments": ["config:i18n"]
+            }
+        },
+
+
         "makara": {
             "priority": 100,
             "enabled": true,
@@ -56,15 +82,19 @@
                 ]
             }
         },
-        
 
-        "static": {
+        "constantesLib": {
+            "enabled": true,
+            "priority": 130,
             "module": {
-                "arguments": [ "path:./.build" ]
+                "name":"path:./lib/middleConstantesLib",
+                "method": "addConstantes",
+                "arguments": ["config"]
             }
         },
 
         "router": {
+            "priority": 200,
             "module": {
                 "arguments": [{ "directory": "path:./controllers" }]
             }
