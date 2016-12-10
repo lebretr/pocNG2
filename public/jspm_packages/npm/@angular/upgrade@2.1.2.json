@@ -1,0 +1,42 @@
+{
+  "main": "bundles/upgrade.umd.js",
+  "format": "cjs",
+  "meta": {
+    "*.json": {
+      "format": "json"
+    },
+    "index.d.ts": {
+      "format": "esm"
+    },
+    "index.js": {
+      "format": "esm"
+    },
+    "src/angular_js.js": {
+      "format": "esm"
+    },
+    "src/constants.js": {
+      "format": "esm"
+    },
+    "src/downgrade_ng2_adapter.js": {
+      "format": "esm"
+    },
+    "src/metadata.js": {
+      "format": "esm"
+    },
+    "src/upgrade.d.ts": {
+      "format": "esm"
+    },
+    "src/upgrade.js": {
+      "format": "esm"
+    },
+    "src/upgrade_adapter.js": {
+      "format": "esm"
+    },
+    "src/upgrade_ng1_adapter.js": {
+      "format": "esm"
+    },
+    "src/util.js": {
+      "format": "esm"
+    }
+  }
+}
